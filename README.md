@@ -42,5 +42,85 @@ Creating a Library Database and Performing SQL Queries
          SELECT * FROM books WHERE Issuedby = 'Librarian 1';
 
    ![image alt](https://github.com/VarunBisht1/SQL-1/blob/fe032c3f664b114843a2ae61479b032e2aea6e1e/output/Select%20by%20specific%20liberian.png)
+
+
+5- Another table to use join query
+
+    
+     CREATE TABLE Librarian (
+    Librarian_ID varchar(100),
+    Librarian_Name VARCHAR(50)
+    );
+    INSERT INTO Librarian (Librarian_ID, Librarian_Name)
+    VALUES
+    ('Librarian 1', 'Rohan'),
+    ('Librarian 2', 'Varun');
+ ![image alt](https://github.com/VarunBisht1/SQL-1/blob/59d38fd0421ac5d3e21e0c25953689e9486f35b5/output/create%202.png)
+
+6 - Inner Join :
         
+    SELECT b.Book_Title, l.Librarian_Name,Book_Title
+    FROM books b
+    Inner JOIN Librarian l ON b.Issuedby = l.Librarian_ID;
+   ![image alt](https://github.com/VarunBisht1/SQL-1/blob/59d38fd0421ac5d3e21e0c25953689e9486f35b5/output/Inner%20join.png)
+
+7- Left Join  :
+
+       SELECT b.Book_Title, l.Librarian_Name
+       FROM books b
+       Left JOIN Librarian l ON b.Issuedby = l.Librarian_ID;
+   ![image alt](https://github.com/VarunBisht1/SQL-1/blob/59d38fd0421ac5d3e21e0c25953689e9486f35b5/output/left%20join.png)
+
+ 8- Right Join :
+ 
+           SELECT b.Book_Title, l.Librarian_Name
+           FROM books b
+           right JOIN Librarian l ON b.Issuedby = l.Librarian_ID;
+   ![image alt](https://github.com/VarunBisht1/SQL-1/blob/59d38fd0421ac5d3e21e0c25953689e9486f35b5/output/right.png)
+
+
+
+ 9-Display books issued by each librarian with their names:
+
+           SELECT b.Book_Title, l.Librarian_Name
+          FROM books b
+          JOIN Librarian l ON b.Issuedby = l.Librarian_ID;
+
+ ![image alt](
+ 
+ 10 -    Display the total number of books issued by each librarian:
+
+             SELECT l.Librarian_Name, COUNT(*) AS Total_Books_Issued
+            FROM books b
+            JOIN Librarian l ON b.Issuedby = l.Librarian_ID
+            GROUP BY l.Librarian_Name;
+ ![image alt](https://github.com/VarunBisht1/SQL-1/blob/6c28b730f23aae351c93e9fbbfeeb8e551eaa47d/output/total.png)
+
+  11-   Display the average publication year of books issued by each librarian:
+
+              SELECT l.Librarian_Name, AVG(b.Publication_no) AS Avg_Publication_Year
+              FROM books b
+             JOIN Librarians l ON b.Issuedby = l.Librarian_ID
+               GROUP BY l.Librarian_Name;
+
+ ![image alt](https://github.com/VarunBisht1/SQL-1/blob/59d38fd0421ac5d3e21e0c25953689e9486f35b5/output/avg%20publica.png)
+
+12 -  Display overdue books with the name of the issuing librarian:
+
+      SELECT b.Book_Title, l.Librarian_Name ,b.over_due
+     FROM books b
+     JOIN Librarian l ON b.Issuedby = l.Librarian_ID
+     WHERE b.Over_due = TRUE;
+ ![image alt](https://github.com/VarunBisht1/SQL-1/blob/6c28b730f23aae351c93e9fbbfeeb8e551eaa47d/output/overdue.png)
+
+    
+
+         
+          
+
+        
+      
+
+
+   
                   

@@ -37,5 +37,10 @@ Creating a Library Database and Performing SQL Queries
 
        Select * from books;
 
-4-
+4- Select by Specific Librarian;
+         
+         SELECT * FROM books WHERE Issuedby = 'Librarian 1';
+
+   ![image alt](https://github.com/VarunBisht1/SQL-1/blob/fe032c3f664b114843a2ae61479b032e2aea6e1e/output/Select%20by%20specific%20liberian.png)
+        
                   

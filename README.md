@@ -31,5 +31,11 @@ Creating a Library Database and Performing SQL Queries
                 (222333445, 'Publisher F', 567, 'Book Title 6', 106, '2023-11-19', 'Librarian 2', '2023-12-02', FALSE),
                 (555666778, 'Publisher G', 890, 'Book Title 7', 107, '2023-11-21', 'Librarian 1', NULL, TRUE);
 
-![image alt]()
+![image alt](https://github.com/VarunBisht1/SQL-1/blob/690fbce8fb54106d823e7bbffa204d901f70ef78/output/Create%20and%20insert.png)
+
+3- Select Query 
+
+       Select * from books;
+
+4-
                   
